@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import DebugFrame
 
 @main
 struct CodeBaseApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FactoryPages().makeCoreDataPage()
         }
+    }
+}
+
+private final class FactoryPages {
+    
+    func makeCoreDataPage() -> CoreDataPage {
+        return CoreDataPage()
     }
 }
