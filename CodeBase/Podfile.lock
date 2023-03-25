@@ -1,0 +1,16 @@
+PODS:
+  - DebugFrame (0.0.1)
+
+DEPENDENCIES:
+  - DebugFrame
+
+SPEC REPOS:
+  trunk:
+    - DebugFrame
+
+SPEC CHECKSUMS:
+  DebugFrame: 39f20e1bbe6150058e239b744cccf0c8bf649f86
+
+PODFILE CHECKSUM: ad09a2e4f098008f4deb14d441f4fde5b6b0a0d5
+
+COCOAPODS: 1.11.3
