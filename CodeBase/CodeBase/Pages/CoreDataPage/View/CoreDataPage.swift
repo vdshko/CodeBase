@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoreDataPage: View {
     
-    @StateObject var viewModel: CoreDataPageViewModel = CoreDataPageViewModel()
+    @StateObject var viewModel: CoreDataPageViewModel = CoreDataPageViewModel(dataService: CoreDataService.shared)
     
     var body: some View {
         NavigationView {

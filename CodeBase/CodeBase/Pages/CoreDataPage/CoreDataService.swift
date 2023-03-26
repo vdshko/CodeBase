@@ -1,19 +1,25 @@
 //
-//  CoreDataPageViewModel.swift
+//  CoreDataService.swift
 //  CodeBase
 //
-//  Created by Vladyslav Shkodych on 25.03.2023.
+//  Created by Vladyslav Shkodych on 26.03.2023.
 //
 
-import SwiftUI
 import CoreData
 
-final class CoreDataPageViewModel: ObservableObject {
+protocol DataService {
     
-    @Published var fruits: [FruitEntity] = []
-    @Published var text: String = ""
+    func create<T>() -> T where T: NSManagedObject
+    func fetch<T>(_ request: NSFetchRequest<T>) throws -> [T] where T : NSFetchRequestResult
+    func save()
+    func delete(_ object: NSManagedObject)
+}
+
+final class CoreDataService: DataService {
     
-    var canSubmit: Bool { return !text.isEmpty }
+    static let shared: CoreDataService = CoreDataService()
+    
+    private init() {}
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         let modelName: String = "CoreDataModel"
@@ -42,50 +48,8 @@ final class CoreDataPageViewModel: ObservableObject {
         return context
     }()
     
-    func onAppear() {
-        fetch()
-    }
-    
-    func addNewFruit() {
-        withAnimation {
-            let newFruit: FruitEntity = FruitEntity(context: mainContext)
-            newFruit.tappedCounter = 0
-            newFruit.name = text
-            save()
-            text = ""
-        }
-    }
-    
-    func update(_ fruit: FruitEntity) {
-        withAnimation {
-            fruit.tappedCounter += 1
-            save()
-        }
-    }
-    
-    func deleteFruit(at offset: IndexSet) {
-        withAnimation {
-            offset.map { fruits[$0] }.forEach { fruit in
-                mainContext.performAndWait {
-                    mainContext.delete(fruit)
-                }
-            }
-            save()
-        }
-    }
-}
-
-private extension CoreDataPageViewModel {
-    
-    func fetch() {
-        let request: NSFetchRequest<FruitEntity> = NSFetchRequest<FruitEntity>(entityName: "FruitEntity")
-        mainContext.performAndWait {
-            do {
-                fruits = try mainContext.fetch(request)
-            } catch {
-                print(error)
-            }
-        }
+    func create<T>() -> T where T: NSManagedObject {
+        return T(context: mainContext)
     }
     
     func save() {
@@ -104,6 +68,15 @@ private extension CoreDataPageViewModel {
                 print(error)
             }
         }
-        fetch()
+    }
+    
+    func delete(_ object: NSManagedObject) {
+        mainContext.performAndWait {
+            mainContext.delete(object)
+        }
+    }
+    
+    func fetch<T>(_ request: NSFetchRequest<T>) throws -> [T] where T : NSFetchRequestResult {
+        return try mainContext.performAndWait { return try mainContext.fetch(request) }
     }
 }
