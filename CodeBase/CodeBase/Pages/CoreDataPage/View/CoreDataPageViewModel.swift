@@ -55,9 +55,8 @@ final class CoreDataPageViewModel: ObservableObject {
 private extension CoreDataPageViewModel {
     
     func fetch() {
-        let request: NSFetchRequest<FruitEntity> = NSFetchRequest<FruitEntity>(entityName: "FruitEntity")
         do {
-            fruits = try dataService.fetch(request)
+            fruits = try dataService.fetch(FruitEntity.request)
         } catch {
             print(error)
         }
