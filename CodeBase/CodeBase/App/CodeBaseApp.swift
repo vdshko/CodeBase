@@ -13,7 +13,7 @@ struct CodeBaseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            FactoryPages().makeCoreDataPage()
+            FactoryPages().makeSwinjectPage()
         }
     }
 }
@@ -22,5 +22,9 @@ private final class FactoryPages {
     
     func makeCoreDataPage() -> CoreDataPage {
         return CoreDataPage()
+    }
+    
+    func makeSwinjectPage() -> SwinjectPage {
+        return SwinjectPage()
     }
 }
