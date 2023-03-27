@@ -14,6 +14,8 @@
 		A1A880BA29CE8003001E232A /* CoreDataPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A880B629CE8003001E232A /* CoreDataPageViewModel.swift */; };
 		A1A880BB29CE8003001E232A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1A880B729CE8003001E232A /* CoreDataModel.xcdatamodeld */; };
 		A1A880BC29CE8003001E232A /* CoreDataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A880B929CE8003001E232A /* CoreDataPage.swift */; };
+		A1A899AE29D21F5000A05FF7 /* SwinjectPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A899AD29D21F5000A05FF7 /* SwinjectPageViewModel.swift */; };
+		A1A899B029D21F7F00A05FF7 /* SwinjectPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A899AF29D21F7F00A05FF7 /* SwinjectPage.swift */; };
 		A1B1A88C29D09CE200E0908E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1A88B29D09CE200E0908E /* CoreDataService.swift */; };
 		A1B1A89229D0B3B100E0908E /* FruitEntity+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1A89129D0B3B100E0908E /* FruitEntity+CoreData.swift */; };
 		CC26862373A4BE80B60CE3A7 /* Pods_CodeBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A5DDC76DB8ADF45F52E21F /* Pods_CodeBase.framework */; };
@@ -31,6 +33,8 @@
 		A1A880B629CE8003001E232A /* CoreDataPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPageViewModel.swift; sourceTree = "<group>"; };
 		A1A880B829CE8003001E232A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A1A880B929CE8003001E232A /* CoreDataPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPage.swift; sourceTree = "<group>"; };
+		A1A899AD29D21F5000A05FF7 /* SwinjectPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectPageViewModel.swift; sourceTree = "<group>"; };
+		A1A899AF29D21F7F00A05FF7 /* SwinjectPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectPage.swift; sourceTree = "<group>"; };
 		A1B1A88B29D09CE200E0908E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		A1B1A89129D0B3B100E0908E /* FruitEntity+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitEntity+CoreData.swift"; sourceTree = "<group>"; };
 		D3A5DDC76DB8ADF45F52E21F /* Pods_CodeBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,7 @@
 		A1A880B029CE7C26001E232A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A1A899AA29D21F0500A05FF7 /* SwinjectPage */,
 				A1A880B529CE8003001E232A /* CoreDataPage */,
 			);
 			path = Pages;
@@ -144,6 +149,15 @@
 				A1B1A88F29D0B13F00E0908E /* View */,
 			);
 			path = CoreDataPage;
+			sourceTree = "<group>";
+		};
+		A1A899AA29D21F0500A05FF7 /* SwinjectPage */ = {
+			isa = PBXGroup;
+			children = (
+				A1A899AF29D21F7F00A05FF7 /* SwinjectPage.swift */,
+				A1A899AD29D21F5000A05FF7 /* SwinjectPageViewModel.swift */,
+			);
+			path = SwinjectPage;
 			sourceTree = "<group>";
 		};
 		A1B1A88F29D0B13F00E0908E /* View */ = {
@@ -281,9 +295,11 @@
 				A1A880A129CE7B9E001E232A /* CodeBaseApp.swift in Sources */,
 				A1A880BA29CE8003001E232A /* CoreDataPageViewModel.swift in Sources */,
 				A1B1A89229D0B3B100E0908E /* FruitEntity+CoreData.swift in Sources */,
+				A1A899AE29D21F5000A05FF7 /* SwinjectPageViewModel.swift in Sources */,
 				A1A880B429CE7FC5001E232A /* GlobalFunctions.swift in Sources */,
 				A1A880BB29CE8003001E232A /* CoreDataModel.xcdatamodeld in Sources */,
 				A1B1A88C29D09CE200E0908E /* CoreDataService.swift in Sources */,
+				A1A899B029D21F7F00A05FF7 /* SwinjectPage.swift in Sources */,
 				A1A880BC29CE8003001E232A /* CoreDataPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
